@@ -1,0 +1,303 @@
+.light-mode {
+    --first-color: #333;
+    --second-color: #ddd;
+    --third-color: #ccc;
+    --fourth-color: #eee;
+    --error-color: #b22222;
+}
+
+.dark-mode {
+    --first-color: #ccc;
+    --second-color: #333;
+    --third-color: #444;
+    --fourth-color: #222;
+    --error-color: #b22222;
+}
+
+.loser {
+    --first-color: #f00;
+    --error-color: #f00;
+}
+
+.winner {
+    --first-color: #0f0;
+    --error-color: #0f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--fourth-color);
+    font-family: cursive;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.container header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2.5px solid var(--third-color);
+    padding-bottom: 20px;
+}
+
+.container header h1 {
+    color: var(--first-color);
+    letter-spacing: 5px;
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+}
+
+.container header .toggle {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.container .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    border-bottom: 2.5px solid var(--third-color);
+    position: relative;
+}
+
+.container .controls .levels {
+    display: flex;
+    user-select: none;
+}
+
+.container .controls .levels span {
+    color: var(--first-color);
+    padding: 10px;
+    background-color: var(--second-color);
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.container .controls .levels .active {
+    background-color: var(--third-color);
+}
+
+.container .controls .levels .btn-start {
+    margin-left: 10px;
+    background-color: var(--first-color);
+    color: var(--fourth-color);
+}
+
+.container .controls .timer-and-errors {
+    display: flex;
+    gap: 10px;
+}
+
+.container .controls .timer-and-errors .timer {
+    font-weight: bold;
+    padding: 10px 40px;
+    background-color: var(--second-color);
+    border: 1px solid var(--first-color);
+    color: var(--first-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .controls .timer-and-errors .errors {
+    padding: 10px 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2.5 solid white;
+    background-color: var(--error-color);
+}
+
+.container .controls .solution {
+    display: flex;
+    gap: 10px
+}
+
+.container .controls .solution .btn-solve,
+.container .controls .solution .btn-hints {
+    font-family: inherit;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: var(--second-color);
+    border: 2.5px solid var(--first-color);
+    color: var(--first-color);
+    outline: none;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.container .controls .solution .btn-solve:disabled,
+.container .controls .solution .btn-hints:disabled {
+    border-color: var(--second-color);
+    color: var(--second-color);
+    cursor: default;
+}
+
+.container .controls .solution .btn-hints.active {
+    background-color: var(--first-color);
+    color: var(--fourth-color);
+}
+
+.container .game-board {
+    margin: 20px auto;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    user-select: none;
+}
+
+.container .game-board .cell {
+    color: var(--first-color);
+    border: 0.25px solid var(--first-color);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .game-board .cell:not(.right) {
+    cursor: pointer;
+}
+
+.container .game-board .cell.right {
+    background-color: var(--second-color);
+}
+
+.container .game-board .cell.wronge {
+    color: var(--error-color);
+    font-weight: bold;
+}
+
+.container .game-board .cell.highlight {
+    background-color: #1f8fff40
+}
+
+.container .game-board .cell.right.highlight {
+    background-color: #1f8fff80;
+}
+
+.container .game-board .cell.bottom-border {
+    border-bottom: 5px solid var(--first-color);
+}
+
+.container .game-board .cell.right-border {
+    border-right: 5px solid var(--first-color);
+}
+
+.container .numbers-container {
+    margin: 0px auto;
+    width: 450px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.container .numbers-container .number {
+    user-select: none;
+    color: var(--first-color);
+    border: 2.5px solid var(--first-color);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container .numbers-container .number.disabled {
+    cursor: normal;
+    opacity: 0.25;
+}
+
+.container .numbers-container .number.active {
+    background-color: var(--first-color);
+    color: var(--fourth-color);
+}
+
+
+@media (max-width: 800px) {
+    .container .controls {
+        flex-flow: wrap;
+    }
+
+    .container .controls .levels {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .container .controls .levels span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        flex: 1;
+    }
+
+    .container .controls .timer-and-errors {
+        flex: 1;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .container .controls .timer-and-errors .timer {
+        flex: 1;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .container .controls .solution .btn-solve,
+    .container .controls .solution .btn-hints {
+        width: 55px;
+        height: 55px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container .game-board {
+        width: 315px;
+        height: 315px;
+    }
+
+    .container .game-board .cell {
+        width: 35px;
+        height: 35px;
+    }
+
+    .container .numbers-container {
+        width: 315px;
+        height: 35px;
+    }
+
+    .container .numbers-container .number {
+        width: 30px;
+        height: 30px;
+    }
+}

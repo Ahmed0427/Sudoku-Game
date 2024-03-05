@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="light-mode">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="awesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Sudoku</h1>
+            <img src="imgs/moon.png" class="toggle"></i></img>
+        </header>
+        <div class="controls">
+            <div class="levels">
+                <span class="level easy active">Easy</span>
+                <span class="level medium">Medium</span>
+                <span class="level hard">Hard</span>
+                <span class="btn-start">New Game</span>
+            </div>
+            <div class="timer-and-errors">
+                <div class="timer">00 : 00</div>
+                <div class="errors">0</div>
+            </div>
+            <div class="solution">
+                <button class="btn-hints"></button>
+                <button class="btn-solve">Cheat</button>
+            </div>
+        </div>
+        <div class="game-board"></div>
+        <div class="numbers-container"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
