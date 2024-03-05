@@ -32,7 +32,9 @@
 
 body {
     background-color: var(--fourth-color);
-    font-family: cursive;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {

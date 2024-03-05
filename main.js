@@ -209,6 +209,7 @@ const handleCellClick = function () {
 btnStart.onclick = function () {
     passedSeconds = 0;
     selectedNumber = null;
+    btnHints.classList.remove("active");
     availableCells = 81;
     usedNumbers = [0, 9, 9, 9, 9, 9, 9, 9, 9, 9];
     levelsSpans.forEach(span => {
